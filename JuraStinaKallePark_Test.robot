@@ -8,8 +8,8 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 
-Test URL
-    Log    ${url}
-
-Test Variables Load
-    Log    ${test_variable}
+Invalid Login
+    Given I navigated to the login site
+    When I enter an invalid username and password
+    And I click the login button
+    Then I should see an error message
