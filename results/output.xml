@@ -1,67 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T14:40:30.649603" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T20:42:02.465186" rpa="false" schemaversion="5">
 <suite id="s1" name="Jurasstina-KallePark" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark">
 <suite id="s1-s1" name="JuraStinaKallePark Test" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark\JuraStinaKallePark_Test.robot">
 <test id="s1-s1-t1" name="Invalid Login" line="11">
 <kw name="I am on the page" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:40:30.957812" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
+<msg time="2025-02-11T20:42:02.730609" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-11T14:40:30.957476" elapsed="1.561097"/>
+<status status="PASS" start="2025-02-11T20:42:02.730258" elapsed="1.620450"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:40:32.525139" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-02-11T20:42:04.366746" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-11T14:40:32.519136" elapsed="0.006457"/>
+<status status="PASS" start="2025-02-11T20:42:04.351210" elapsed="0.016019"/>
 </kw>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>${title}</arg>
-<status status="PASS" start="2025-02-11T14:40:30.956645" elapsed="1.569237"/>
+<status status="PASS" start="2025-02-11T20:42:02.729415" elapsed="1.638135"/>
 </kw>
 <kw name="Given I navigated to the login site" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:40:32.533741" level="INFO">Clicking element 'xpath=//section[@id='login-nav']//login-section'.</msg>
-<msg time="2025-02-11T14:40:32.827570" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-11T14:40:32.827970" level="FAIL">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</msg>
-<arg>${login_page}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-02-11T14:40:32.532849" elapsed="0.298874">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-11T20:42:04.374504" level="INFO">Executing JavaScript:
+document.getElementById('login-section').style.display = 'block'
+Without any arguments.</msg>
+<arg>document.getElementById('login-section').style.display = 'block'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.373658" elapsed="0.027811"/>
 </kw>
-<status status="FAIL" start="2025-02-11T14:40:32.526535" elapsed="0.305424">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
+<status status="PASS" start="2025-02-11T20:42:04.369370" elapsed="0.032277"/>
 </kw>
 <kw name="When I enter an invalid username and password" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:40:32.834693" elapsed="0.001340"/>
+<kw name="Type In Element" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T20:42:04.408555" level="INFO">Typing text 'qwerty1234' into text field 'id=login-username'.</msg>
+<arg>${id_element}</arg>
+<arg>${text_to_write}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.407738" elapsed="0.093888"/>
+</kw>
+<arg>${username_input_id}</arg>
+<arg>${invalid_username}</arg>
+<status status="PASS" start="2025-02-11T20:42:04.407100" elapsed="0.094800"/>
+</kw>
+<kw name="Type In Element" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T20:42:04.503455" level="INFO">Typing text 'asdf123' into text field 'id=login-password'.</msg>
+<arg>${id_element}</arg>
+<arg>${text_to_write}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.502936" elapsed="0.064950"/>
+</kw>
+<arg>${password_input_id}</arg>
+<arg>${invalid_password}</arg>
+<status status="PASS" start="2025-02-11T20:42:04.502204" elapsed="0.065979"/>
+</kw>
+<arg>${username_input_id}</arg>
+<arg>${invalid_username}</arg>
+<arg>${password_input_id}</arg>
+<arg>${invalid_password}</arg>
+<status status="PASS" start="2025-02-11T20:42:04.403842" elapsed="0.164483"/>
 </kw>
 <kw name="And I click the login button" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:40:32.837333" elapsed="0.001633"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-11T20:42:04.574945" level="INFO">Clicking button '//*[@id='login-form']/button'.</msg>
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.574605" elapsed="0.065952"/>
+</kw>
+<arg>${login_button}</arg>
+<status status="PASS" start="2025-02-11T20:42:04.570841" elapsed="0.069889"/>
 </kw>
 <kw name="Then I should see an error message" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:40:32.840896" elapsed="0.002073"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${error_message_element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.644621" elapsed="0.018836"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${error_message_element}</arg>
+<arg>${error_message}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-02-11T20:42:04.663720" elapsed="2.124923"/>
+</kw>
+<arg>${error_message_element}</arg>
+<arg>${error_message}</arg>
+<status status="PASS" start="2025-02-11T20:42:04.642736" elapsed="2.146089"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-11T14:40:32.845629" elapsed="2.476968"/>
+<status status="PASS" start="2025-02-11T20:42:06.790821" elapsed="2.504541"/>
 </kw>
-<status status="FAIL" start="2025-02-11T14:40:30.955668" elapsed="4.367239">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
+<status status="PASS" start="2025-02-11T20:42:02.728496" elapsed="6.567159"/>
 </test>
 <doc>Testing the JuraStinaKallePark Page</doc>
-<status status="FAIL" start="2025-02-11T14:40:30.675310" elapsed="4.649017"/>
+<status status="PASS" start="2025-02-11T20:42:02.496877" elapsed="6.800234"/>
 </suite>
-<status status="FAIL" start="2025-02-11T14:40:30.653212" elapsed="4.672413"/>
+<status status="PASS" start="2025-02-11T20:42:02.469006" elapsed="6.829498"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Jurasstina-KallePark" id="s1" pass="0" fail="1" skip="0">Jurasstina-KallePark</stat>
-<stat name="JuraStinaKallePark Test" id="s1-s1" pass="0" fail="1" skip="0">Jurasstina-KallePark.JuraStinaKallePark Test</stat>
+<stat name="Jurasstina-KallePark" id="s1" pass="1" fail="0" skip="0">Jurasstina-KallePark</stat>
+<stat name="JuraStinaKallePark Test" id="s1-s1" pass="1" fail="0" skip="0">Jurasstina-KallePark.JuraStinaKallePark Test</stat>
 </suite>
 </statistics>
 <errors>

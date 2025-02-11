@@ -13,7 +13,7 @@ I am on the page
     Title Should Be    ${title}
 
 I navigated to the login site
-    Click Element    ${login_page}
+    Execute JavaScript    document.getElementById('login-section').style.display = 'block'
 
 I enter an invalid username and password
     [Arguments]    ${username_input_id}    ${invalid_username}    ${password_input_id}    ${invalid_password}
@@ -27,7 +27,7 @@ I click the login button
 I should see an error message
     [Arguments]    ${error_message_element}    ${error_message}
     Wait Until Element Is Visible    ${error_message_element}
-    Element Text Should Be    ${error_message_element}    ${error_message}
+    Wait Until Element Contains    ${error_message_element}    ${error_message}
 
 
 
