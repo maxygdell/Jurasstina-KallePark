@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T13:02:34.135810" rpa="false" schemaversion="5">
+<suite id="s1" name="Jurasstina-KallePark" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark">
+<suite id="s1-s1" name="JuraStinaKallePark Test" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark\JuraStinaKallePark_Test.robot">
+<test id="s1-s1-t1" name="Test URL" line="11">
+<kw name="I am on the page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T13:02:34.404348" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T13:02:34.404005" elapsed="1.407515"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-11T13:02:35.830610" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-11T13:02:35.811904" elapsed="0.019155"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-02-11T13:02:34.403126" elapsed="1.428231"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-11T13:02:35.832496" level="INFO">C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html</msg>
+<arg>${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-11T13:02:35.831938" elapsed="0.000901"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-11T13:02:35.833490" elapsed="2.549042"/>
+</kw>
+<status status="PASS" start="2025-02-11T13:02:34.402169" elapsed="3.980635"/>
+</test>
+<test id="s1-s1-t2" name="Test Variables Load" line="14">
+<kw name="I am on the page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T13:02:38.385444" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T13:02:38.385141" elapsed="1.456836"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-11T13:02:39.847746" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-11T13:02:39.842314" elapsed="0.005655"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-02-11T13:02:38.384666" elapsed="1.463479"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-11T13:02:39.849097" level="INFO">Hello, Robot!</msg>
+<arg>${test_variable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-11T13:02:39.848572" elapsed="0.000795"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-11T13:02:39.849932" elapsed="2.453911"/>
+</kw>
+<status status="PASS" start="2025-02-11T13:02:38.383880" elapsed="3.920303"/>
+</test>
+<doc>Testing the JuraStinaKallePark Page</doc>
+<status status="PASS" start="2025-02-11T13:02:34.161460" elapsed="8.144187"/>
+</suite>
+<status status="PASS" start="2025-02-11T13:02:34.139375" elapsed="8.168160"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Jurasstina-KallePark" id="s1" pass="2" fail="0" skip="0">Jurasstina-KallePark</stat>
+<stat name="JuraStinaKallePark Test" id="s1-s1" pass="2" fail="0" skip="0">Jurasstina-KallePark.JuraStinaKallePark Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
