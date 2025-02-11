@@ -13,7 +13,7 @@ I am on the page
     Title Should Be    ${title}
 
 I navigated to the login site
-    Click Link    ${login_page}
+    Click Element    ${login_page}
 
 I enter an invalid username and password
     [Arguments]    ${username_input_id}    ${invalid_username}    ${password_input_id}    ${invalid_password}

@@ -9,7 +9,7 @@ browser = "chrome"
 url = f"{current_directory}/JuraStinaKallePark/jurap.html"
 title = "Jura-Stina-Kalle Park"
 
-login_page = "data-section=login-section"
+login_page = "xpath=//section[@id='login-nav']//login-section"
 
 username_input_id = "id=login-username"
 password_input_id = "id=login-password"

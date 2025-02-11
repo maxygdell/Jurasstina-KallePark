@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T14:24:15.040179" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T14:40:30.649603" rpa="false" schemaversion="5">
 <suite id="s1" name="Jurasstina-KallePark" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark">
 <suite id="s1-s1" name="JuraStinaKallePark Test" source="C:\Users\Anjoffs\Documents\GitHub\Jurasstina-KallePark\JuraStinaKallePark_Test.robot">
 <test id="s1-s1-t1" name="Invalid Login" line="11">
 <kw name="I am on the page" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:24:15.325660" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
+<msg time="2025-02-11T14:40:30.957812" level="INFO">Opening browser 'chrome' to base url 'C:/Users/Anjoffs/Documents/GitHub/Jurasstina-KallePark/JuraStinaKallePark/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-11T14:24:15.325266" elapsed="1.598313"/>
+<status status="PASS" start="2025-02-11T14:40:30.957476" elapsed="1.561097"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:24:16.927737" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-02-11T14:40:32.525139" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-11T14:24:16.923843" elapsed="0.004112"/>
+<status status="PASS" start="2025-02-11T14:40:32.519136" elapsed="0.006457"/>
 </kw>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>${title}</arg>
-<status status="PASS" start="2025-02-11T14:24:15.324261" elapsed="1.603864"/>
+<status status="PASS" start="2025-02-11T14:40:30.956645" elapsed="1.569237"/>
 </kw>
 <kw name="Given I navigated to the login site" owner="keywords">
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-02-11T14:24:16.931228" level="INFO">Clicking link 'data-section=login-section'.</msg>
-<msg time="2025-02-11T14:24:17.329812" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-11T14:24:17.330101" level="FAIL">Link with locator 'data-section=login-section' not found.</msg>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T14:40:32.533741" level="INFO">Clicking element 'xpath=//section[@id='login-nav']//login-section'.</msg>
+<msg time="2025-02-11T14:40:32.827570" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-11T14:40:32.827970" level="FAIL">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</msg>
 <arg>${login_page}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="FAIL" start="2025-02-11T14:24:16.930789" elapsed="0.402780">Link with locator 'data-section=login-section' not found.</status>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-11T14:40:32.532849" elapsed="0.298874">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
 </kw>
-<status status="FAIL" start="2025-02-11T14:24:16.928649" elapsed="0.405139">Link with locator 'data-section=login-section' not found.</status>
+<status status="FAIL" start="2025-02-11T14:40:32.526535" elapsed="0.305424">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
 </kw>
 <kw name="When I enter an invalid username and password" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:24:17.335546" elapsed="0.001233"/>
+<status status="NOT RUN" start="2025-02-11T14:40:32.834693" elapsed="0.001340"/>
 </kw>
 <kw name="And I click the login button" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:24:17.338139" elapsed="0.001715"/>
+<status status="NOT RUN" start="2025-02-11T14:40:32.837333" elapsed="0.001633"/>
 </kw>
 <kw name="Then I should see an error message" owner="keywords">
-<status status="NOT RUN" start="2025-02-11T14:24:17.341609" elapsed="0.001597"/>
+<status status="NOT RUN" start="2025-02-11T14:40:32.840896" elapsed="0.002073"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-11T14:24:17.345249" elapsed="2.200323"/>
+<status status="PASS" start="2025-02-11T14:40:32.845629" elapsed="2.476968"/>
 </kw>
-<status status="FAIL" start="2025-02-11T14:24:15.323203" elapsed="4.222625">Link with locator 'data-section=login-section' not found.</status>
+<status status="FAIL" start="2025-02-11T14:40:30.955668" elapsed="4.367239">Element with locator 'xpath=//section[@id='login-nav']//login-section' not found.</status>
 </test>
 <doc>Testing the JuraStinaKallePark Page</doc>
-<status status="FAIL" start="2025-02-11T14:24:15.066138" elapsed="4.481012"/>
+<status status="FAIL" start="2025-02-11T14:40:30.675310" elapsed="4.649017"/>
 </suite>
-<status status="FAIL" start="2025-02-11T14:24:15.044050" elapsed="4.504530"/>
+<status status="FAIL" start="2025-02-11T14:40:30.653212" elapsed="4.672413"/>
 </suite>
 <statistics>
 <total>
