@@ -47,6 +47,7 @@ I have registered a valid user
 
 
 I register a user with username
+    [Tags]   Wassim
     [Arguments]    ${username_register_input_id}    ${valid_username2}    ${password_register_input_id}    ${valid_password2}    ${register_button}
      Execute JavaScript    document.getElementById('register-section').style.display = 'block'
     Input Text    ${username_register_input_id}    ${valid_username2}
@@ -54,6 +55,7 @@ I register a user with username
     Click Button  ${register_button}
     
 I should see the registration success message
+    [Tags]   Wassim
     [Arguments]    ${successful_message_element}    ${successful_message}
     Wait Until Element Is Visible    ${successful_message_element}  
     Element Should Contain    ${successful_message_element}    ${successful_message}
