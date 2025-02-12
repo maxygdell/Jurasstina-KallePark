@@ -12,6 +12,7 @@ title = "Jura-Stina-Kalle Park"
 username_register_input_id ="id=reg-username"
 password_register_input_id ="id=reg-password"
 
+
 username_input_id = "id=login-username"
 password_input_id = "id=login-password"
 
@@ -27,10 +28,12 @@ valid_password = "Familj123"
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
 
-successful_message_element = ""
-successful_message = ""
+successful_message_element = "id=success-message" 
+successful_message = "Registration successful!"
+
 
 buy_tickets_visible = "id=tickets-nav"
 
 test_variable = "Hello, Robot!"
+
 

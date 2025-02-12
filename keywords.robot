@@ -44,3 +44,16 @@ I have registered a valid user
     Type In Element    ${username_register_input_id}    ${valid_username}
     Type In Element    ${password_register_input_id}    ${valid_password}
     Click Button    ${register_button}
+
+
+I register a user with username
+    [Arguments]    ${username_register_input_id}    ${valid_username2}    ${password_register_input_id}    ${valid_password2}    ${register_button}
+     Execute JavaScript    document.getElementById('register-section').style.display = 'block'
+    Input Text    ${username_register_input_id}    ${valid_username2}
+    Input Text    ${password_register_input_id}    ${valid_password2}
+    Click Button  ${register_button}
+    
+I should see the registration success message
+    [Arguments]    ${successful_message_element}    ${successful_message}
+    Wait Until Element Is Visible    ${successful_message_element}  
+    Element Should Contain    ${successful_message_element}    ${successful_message}
