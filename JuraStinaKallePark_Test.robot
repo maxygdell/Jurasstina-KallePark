@@ -23,4 +23,4 @@ Valid Login
     And I navigated to the login site
     When I enter a valid username and password    ${username_input_id}    ${valid_username}    ${password_input_id}    ${valid_password}
     And I click the login button    ${login_button}
-    Then I should be logged in   ${buy_tickets_visible}
+    Then I should be logged in   ${buy_tickets}

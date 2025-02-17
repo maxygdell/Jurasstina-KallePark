@@ -30,7 +30,7 @@ error_message = "Invalid username or password"
 successful_message_element = ""
 successful_message = ""
 
-buy_tickets_visible = "id=tickets-nav"
+buy_tickets = "id=tickets-nav"
 
 test_variable = "Hello, Robot!"
 

@@ -43,8 +43,8 @@ I enter a valid username and password
 
 I should be logged in
     [Tags]    Andreas
-    [Arguments]    ${buy_tickets_visible}
-    Wait Until Element Is Visible    ${buy_tickets_visible}
+    [Arguments]    ${buy_tickets}
+    Wait Until Element Is Visible    ${buy_tickets}
 
 I have registered a valid user
     [Tags]    Andreas
