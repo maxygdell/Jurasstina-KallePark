@@ -38,3 +38,14 @@ buy_tickets = "id=tickets-nav"
 
 test_variable = "Hello, Robot!"
 
+TEST_DATA = {
+    "valid": [
+        {"username": "asdf", "password": "abcd1234"},
+        {"username": "12345", "password": "420BlazeIt"}
+    ],
+    "invalid": [
+        {"username": "", "password": ""},
+        {"username": None, "password": "abcd"},
+        {"username": "user!@#", "password": "abc1234"}
+    ]
+}
