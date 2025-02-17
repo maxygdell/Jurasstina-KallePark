@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    variables.py
 
 *** Keywords ***
 
@@ -71,16 +72,20 @@ I should see an failed to register message
     Wait Until Element Is Visible    ${error_message_register_element}
     Wait Until Element Contains    ${error_message_register_element}    ${error_message_register}
 
-I want to register a user using the wrong password length
-    [Tags]    Andreas
-    [Arguments]    ${username_register_input_id}    ${valid_username}    ${password_register_input_id}    ${invalid_passwords}    ${register_button}
-    Type In Element    ${username_register_input_id}    ${valid_username}
-    Type In Element    ${password_register_input_id}    ${invalid_passwords}
-    Click Button    ${register_button}
-
 
 I should see an invalid password message
     [Tags]    Andreas
     [Arguments]    ${error_message_register_element}    ${error_message_password_register}
     Wait Until Element Is Visible    ${error_message_register_element}
     Wait Until Element Contains    ${error_message_register_element}    ${error_message_password_register}
+
+I want to register a user using the wrong password length
+    [Tags]    Andreas
+    [Arguments]    ${username_register_input_id}    ${valid_username}    ${password_register_input_id}    ${register_button}
+    FOR    ${invalid_password}    IN    @{invalid_passwords}
+        Clear Element Text    ${username_register_input_id}
+        Clear Element Text    ${password_register_input_id}
+        Type In Element    ${username_register_input_id}    ${valid_username}
+        Type In Element    ${password_register_input_id}    ${invalid_password}
+        Click Button    ${register_button}
+    END

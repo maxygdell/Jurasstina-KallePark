@@ -22,7 +22,7 @@ invalid_username = "qwerty1234"
 invalid_passwords = ["", "asdf123", "åäö"]
 
 valid_username = "KimMedFamiljen"
-valid_password = "Familj1"
+valid_password = "Familj123"
 
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
@@ -37,15 +37,3 @@ successful_message = ""
 buy_tickets = "id=tickets-nav"
 
 test_variable = "Hello, Robot!"
-
-TEST_DATA = {
-    "valid": [
-        {"username": "asdf", "password": "abcd1234"},
-        {"username": "12345", "password": "420BlazeIt"}
-    ],
-    "invalid": [
-        {"username": "", "password": ""},
-        {"username": None, "password": "abcd"},
-        {"username": "user!@#", "password": "abc1234"}
-    ]
-}
