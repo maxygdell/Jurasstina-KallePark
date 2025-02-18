@@ -19,8 +19,7 @@ Invalid Login
 Valid Login
     [Tags]    Andreas
     [Documentation]    Testing a valid login
-    Given I have registered a valid user
-    And I navigated to the login site
+    Given I navigated to the login site
     When I enter a valid username and password
     And I click the login button
     Then I should be logged in

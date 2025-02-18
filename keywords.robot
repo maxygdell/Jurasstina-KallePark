@@ -84,13 +84,13 @@ I want to register a user using the wrong password length
 Open Page And Register User
     [Tags]    Martin
     I am on the page	${url}    ${browser}    ${title}
-    I have registered a valid user    ${username_register_input_id}    ${valid_username}    ${password_register_input_id}    ${valid_password}    ${register_button}
+    I have registered a valid user
 
 I Have Logged In With Valid Credentials
     [Tags]    Martin
     I navigated to the login site
-    I enter a valid username and password    ${username_input_id}    ${valid_username}    ${password_input_id}    ${valid_password}
-    I click the login button    ${login_button}
+    I enter a valid username and password
+    I click the login button
     Wait Until Element Is Visible    ${cart_visible}
 
 I Navigate To The Buy Tickets Page
