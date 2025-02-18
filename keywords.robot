@@ -163,7 +163,7 @@ I Navigate To The Book Safaris Page
 I Add The VIP Safari Tours
     [Tags]    Andreas
     Select Safari Date
-    Select Safari Tour
+    Select Safari Exclusive Tour
     Click Button    ${add_to_cart_button}
     Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
@@ -171,10 +171,23 @@ Select Safari Date
     [Tags]    Andreas
     Input Text    ${safari_dates_category}    ${safari_weekend_date}
 
-Select Safari Tour
+Select Safari Exclusive Tour
     [Tags]    Andreas
     Select From List By Value    ${safari_type_category}    ${herbivore_feeding_tour}
     Select From List By Value    ${safari_type_category}    ${rumble_thrill}
     Click Button    ${add_to_cart_button}
     Handle Alert
+
+I Added Two Regular Adult Tickets To Cart
+    [Tags]    Andreas
+    Select ticket type    ${adult_ticket_type}
+    Select ticket category    ${regular_ticket_category}
+    Select ticket quantity    ${two_ticket_quantity}
+    Click Button    ${add_to_cart_button}
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+
+I Should See Safari Access Denied Message
+    [Tags]    Andreas
+    Wait Until Element Is Visible    ${error_message_element_safari}
+    Wait Until Element Contains    ${error_message_element_safari}    ${safari_access_denied_message}
 

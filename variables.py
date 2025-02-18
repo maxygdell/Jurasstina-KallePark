@@ -27,6 +27,7 @@ invalid_passwords = ["", "asdf123", "åäö"]
 valid_username = "KimMedFamiljen"
 valid_password = "Familj123"
 
+error_message_element_safari = "id=safari-message"
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
 
@@ -55,10 +56,13 @@ expected_ticket_quantity_vip_child = "2 VIP Child Ticket(s) - $120"
 expected_ticket_quantity = ""
 
 safari_dates_category = "id=safari-date"
-safari_weekend_date = "2024-04-20"
+safari_weekend_date = "2025-04-20"
 
 safari_type_category = "id=safari-type"
 herbivore_feeding_tour = "Herbivore Tour with Feeding"
 rumble_thrill = "T-Rex Rumble eXtreme Thrill Pack"
 
 alert_cart_message = "Item added to cart!"
+
+safari_access_denied_message = "VIP tickets required to book safaris on weekends."
+safari_weekday_date = "2025-02-19"
