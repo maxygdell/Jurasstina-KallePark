@@ -105,6 +105,14 @@ I Added Two Adult VIP-tickets To Cart
     Click Button    ${add_to_cart_button}
     Handle Alert
 
+I Added Two Child VIP-tickets To Cart
+    [Tags]    Martin
+    Select ticket type    ${child_ticket_type}
+    Select ticket category    ${vip_ticket_category}
+    Select ticket quantity    ${two_ticket_quantity}
+    Click Button    ${add_to_cart_button}
+    Handle Alert
+
 Select Ticket Type
     [Tags]    Martin
     [Arguments]    ${adult_ticket_type}
@@ -123,7 +131,6 @@ Select Ticket Quantity
 The Cart Should Be Updated
     [Tags]    Martin
     Navigate To Cart Page    ${cart_nav_button}
-    Sleep    5s
     Verify Cart Quantity    ${expected_ticket_quantity}
 
 Navigate To Cart Page
@@ -135,5 +142,12 @@ Navigate To Cart Page
 Verify Cart Quantity
     [Tags]    Martin
     [Arguments]    ${expected_ticket_quantity}
-    ${actual_quantity}    Get Text    css=#cart-details li
-    Should Be Equal As Numbers    ${actual_quantity}    ${expected_ticket_quantity}
+    ${cart_text}    Get Text    css=#cart-details
+    Should Contain    ${cart_text}    ${expected_ticket_quantity}
+
+I Can Proceed To Checkout
+    [Tags]    Martin
+    Click Button    ${proceed_to_checkout_button}
+    Handle Alert
+
+

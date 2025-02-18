@@ -50,4 +50,6 @@ regular_ticket_category = "Regular"
 vip_ticket_category = "VIP"
 
 two_ticket_quantity = "2"
-expected_ticket_quantity = "2 VIP Adult Ticket(s) - $200"
+expected_ticket_quantity_vip_adult = "2 VIP Adult Ticket(s) - $200"
+expected_ticket_quantity_vip_child = "2 VIP Child Ticket(s) - $120"
+expected_ticket_quantity = ""
