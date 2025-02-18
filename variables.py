@@ -17,9 +17,12 @@ password_input_id = "id=login-password"
 
 login_button = "//*[@id='login-form']/button"
 register_button = "//*[@id='register-form']/button"
+add_to_cart_button = "//*[@id='ticket-form']/button"
+cart_nav_button = "id=cart-nav"
+proceed_to_checkout_button = "id=checkout-button"
 
 invalid_username = "qwerty1234"
-invalid_passwords = ["", "asdf123", "åäö"]
+invalid_password = "asdf123"
 
 valid_username = "KimMedFamiljen"
 valid_password = "Familj123"
@@ -27,13 +30,20 @@ valid_password = "Familj123"
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
 
-error_message_register_element = "id=register-message"
-error_message_register = "Username already exists. Please choose another."
-error_message_password_register = "Password must be at least 8 characters long."
-
 successful_message_element = ""
 successful_message = ""
 
 buy_tickets = "id=tickets-nav"
+cart_visible = "id=cart-nav"
 
 test_variable = "Hello, Robot!"
+
+adult_ticket_type = "Adult"
+child_ticket_type = "Child"
+senior_ticket_type = "Senior"
+
+regular_ticket_category = "Regular"
+vip_ticket_category = "VIP"
+
+two_ticket_quantity = "2"
+expected_ticket_quantity = "2 VIP Adult Ticket(s) - $200"
