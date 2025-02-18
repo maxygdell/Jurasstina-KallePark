@@ -19,10 +19,14 @@ I navigated to the login site
     [Tags]    Andreas
     Execute JavaScript    document.getElementById('login-section').style.display = 'block'
 
+I am on the registration page
+    [Tags]    Andreas
+    Execute Javascript    document.getElementById('register-section').style.display = 'block'
+
 I enter an invalid username and password
     [Tags]    Andreas
     Type In Element    ${username_input_id}    ${invalid_username}
-    Type In Element    ${password_input_id}    ${invalid_password}
+    Type In Element    ${password_input_id}    ${invalid_passwords}
 
 I click the login button
     [Tags]    Andreas
