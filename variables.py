@@ -53,3 +53,12 @@ two_ticket_quantity = "2"
 expected_ticket_quantity_vip_adult = "2 VIP Adult Ticket(s) - $200"
 expected_ticket_quantity_vip_child = "2 VIP Child Ticket(s) - $120"
 expected_ticket_quantity = ""
+
+safari_dates_category = "id=safari-date"
+safari_weekend_date = "2024-04-20"
+
+safari_type_category = "id=safari-type"
+herbivore_feeding_tour = "Herbivore Tour with Feeding"
+rumble_thrill = "T-Rex Rumble eXtreme Thrill Pack"
+
+alert_cart_message = "Item added to cart!"

@@ -130,14 +130,12 @@ Select Ticket Quantity
 
 The Cart Should Be Updated
     [Tags]    Martin
-    Navigate To Cart Page    ${cart_nav_button}
+    Navigate To Cart Page
     Verify Cart Quantity    ${expected_ticket_quantity}
 
 Navigate To Cart Page
     [Tags]    Martin
-    [Arguments]    ${cart_nav_button}
-    Click Element    ${cart_nav_button}
-    Wait Until Element Is Visible    id=cart-section
+    Execute JavaScript    document.getElementById('cart-section').style.display = 'block'
 
 Verify Cart Quantity
     [Tags]    Martin
@@ -153,12 +151,30 @@ I Can Proceed To Checkout
 I am logged In And Have VIP-Tickets
     [Tags]    Martin
     I Have Logged In With Valid Credentials
+    I Navigate To The Buy Tickets Page
     I Added Two Adult VIP-tickets To Cart
     I Added Two Child VIP-tickets To Cart
 
 I Navigate To The Book Safaris Page
     [Tags]    Martin
     Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
+    Wait Until Element Is Visible    ${safari_type_category}
 
+I Add The VIP Safari Tours
+    [Tags]    Andreas
+    Select Safari Date
+    Select Safari Tour
+    Click Button    ${add_to_cart_button}
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
+Select Safari Date
+    [Tags]    Andreas
+    Input Text    ${safari_dates_category}    ${safari_weekend_date}
+
+Select Safari Tour
+    [Tags]    Andreas
+    Select From List By Value    ${safari_type_category}    ${herbivore_feeding_tour}
+    Select From List By Value    ${safari_type_category}    ${rumble_thrill}
+    Click Button    ${add_to_cart_button}
+    Handle Alert
 
