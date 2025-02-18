@@ -24,3 +24,21 @@ Valid Login
     When I enter a valid username and password
     And I click the login button
     Then I should be logged in
+
+Purchase Adult VIP-Tickets
+    [Tags]    Martin
+    [Documentation]    Testing that you can buy two adult vip-tickets
+    Given I Have Logged In With Valid Credentials
+    And I Navigate To The Buy Tickets Page
+    When I Added Two Adult VIP-tickets To Cart
+    Then The Cart Should Be Updated
+    And I Can Proceed To Checkout
+
+Purchase Child VIP-Tickets
+    [Tags]    Martin
+    [Documentation]    Testing that you can buy two child vip-tickets
+    Given I Have Logged In With Valid Credentials
+    And I Navigate To The Buy Tickets Page
+    When I Added Two Child VIP-tickets To Cart
+    Then The Cart Should Be Updated
+    And I Can Proceed To Checkout
