@@ -12,9 +12,9 @@ Invalid Login
     [Tags]    Andreas
     [Documentation]    Testing an invalid login
     Given I navigated to the login site
-    When I enter an invalid username and password    ${username_input_id}    ${invalid_username}    ${password_input_id}    ${invalid_passwords}
-    And I click the login button    ${login_button}
-    Then I should see an error message    ${error_message_element}    ${error_message}
+    When I enter an invalid username and password
+    And I click the login button
+    Then I should see an error message
 
 Valid Login
     [Tags]    Andreas
