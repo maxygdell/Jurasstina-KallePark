@@ -150,4 +150,15 @@ I Can Proceed To Checkout
     Click Button    ${proceed_to_checkout_button}
     Handle Alert
 
+I am logged In And Have VIP-Tickets
+    [Tags]    Martin
+    I Have Logged In With Valid Credentials
+    I Added Two Adult VIP-tickets To Cart
+    I Added Two Child VIP-tickets To Cart
+
+I Navigate To The Book Safaris Page
+    [Tags]    Martin
+    Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
+
+
 

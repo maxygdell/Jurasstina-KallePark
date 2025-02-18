@@ -41,3 +41,11 @@ Purchase Child VIP-Tickets
     When I Added Two Child VIP-tickets To Cart
     Then The Cart Should Be Updated
     And I Can Proceed To Checkout
+
+Purchase Safari With Close Encounter On Weekend
+    [Tags]    Martin
+    [Documentation]    Testing that you can buy safari with close encounter on weekend
+    Given I am logged In And Have VIP-Tickets
+    And I Navigate To The Book Safaris Page
+    When 
+    Then
