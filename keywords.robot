@@ -102,7 +102,7 @@ I Added Two Adult VIP-tickets To Cart
     Select ticket category    ${vip_ticket_category}
     Select ticket quantity    ${two_ticket_quantity}
     Click Button    ${add_to_cart_button}
-    Handle Alert
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
 I Added Two Child VIP-tickets To Cart
     [Tags]    Martin
@@ -110,7 +110,7 @@ I Added Two Child VIP-tickets To Cart
     Select ticket category    ${vip_ticket_category}
     Select ticket quantity    ${two_ticket_quantity}
     Click Button    ${add_to_cart_button}
-    Handle Alert
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
 Select Ticket Type
     [Tags]    Martin
@@ -145,7 +145,7 @@ Verify Cart Quantity
 I Can Proceed To Checkout
     [Tags]    Martin
     Click Button    ${proceed_to_checkout_button}
-    Handle Alert
+    Handle Alert    ACCEPT
 
 I am logged In And Have VIP-Tickets
     [Tags]    Martin
