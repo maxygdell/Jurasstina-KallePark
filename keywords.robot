@@ -34,7 +34,6 @@ I click the login button
 
 I should see an error message
     [Tags]    Andreas
-
     Wait Until Element Is Visible    ${error_message_element}
     Wait Until Element Contains    ${error_message_element}    ${error_message}
 
@@ -162,12 +161,17 @@ I Navigate To The Book Safaris Page
 
 I Add The VIP Safari Tours
     [Tags]    Andreas
-    Select Safari Date
+    Select Safari Weekend Date
     Select Safari Exclusive Tour
-    Click Button    ${add_to_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Click Button    ${safari_cart_button}
 
-Select Safari Date
+I Book Tours On The Weekend
+    [Tags]    Andreas
+    Select Safari Weekend Date
+    Select Safari Tour
+    Click Button    ${safari_cart_button}
+
+Select Safari Weekend Date
     [Tags]    Andreas
     Input Text    ${safari_dates_category}    ${safari_weekend_date}
 
@@ -175,8 +179,10 @@ Select Safari Exclusive Tour
     [Tags]    Andreas
     Select From List By Value    ${safari_type_category}    ${herbivore_feeding_tour}
     Select From List By Value    ${safari_type_category}    ${rumble_thrill}
-    Click Button    ${add_to_cart_button}
-    Handle Alert
+
+Select Safari Tour
+    [Tags]    Andreas
+    Select From List By Value    ${safari_type_category}    ${herbivore_tour}
 
 I Added Two Regular Adult Tickets To Cart
     [Tags]    Andreas
@@ -186,8 +192,12 @@ I Added Two Regular Adult Tickets To Cart
     Click Button    ${add_to_cart_button}
     Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
+I Should See A Cannot Book On Weekend Message
+    [Tags]    Andreas
+    Wait Until Element Is Visible    ${error_message_element_safari}
+    Wait Until Element Contains    ${error_message_element_safari}    ${safari_weekend_denied_message}
+
 I Should See Safari Access Denied Message
     [Tags]    Andreas
     Wait Until Element Is Visible    ${error_message_element_safari}
-    Wait Until Element Contains    ${error_message_element_safari}    ${safari_access_denied_message}
-
+    Wait Until Element Contains    ${error_message_element_safari}    ${safari_vip_booking_denied_message}

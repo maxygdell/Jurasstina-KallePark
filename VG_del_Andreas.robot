@@ -29,8 +29,8 @@ Non VIP User Cannot Book Weekend Safari
     And I Navigate To The Buy Tickets Page
     And I Added Two Regular Adult Tickets To Cart
     When I Navigate To The Book Safaris Page
-    And I Add The VIP Safari Tours
-    Then I Should See Safari Access Denied Message
+    And I Book Tours On The Weekend
+    Then I Should See A Cannot Book On Weekend Message
 
 Non VIP User Cannot Book Exclusive Tours
     [Tags]    Andreas
