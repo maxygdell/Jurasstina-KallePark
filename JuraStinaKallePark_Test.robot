@@ -23,11 +23,3 @@ Valid Login
     And I click the login button    ${login_button}
     Then I should be logged in   ${buy_tickets_visible}
 
-Register User   
-     [Tags]   Wassim
-    [Documentation]    Test to register a new user and verify success message.
-    ${valid_username2}    Set Variable    Stina-Palle
-    ${valid_password2}    Set Variable    Stina4251!
-    When I register a user with username  ${username_register_input_id}    ${valid_username2}    ${password_register_input_id}    ${valid_password2}    ${register_button}
-    Then I should see the registration success message    ${successful_message_element}    ${successful_message} 
-

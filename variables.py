@@ -28,8 +28,8 @@ valid_password = "Familj123"
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
 
-successful_message_element = "id=success-message" 
-successful_message = "Registration successful!"
+successful_message_element = "id=register-message" 
+successful_message = "Registration successful! Redirecting to login..."
 
 
 buy_tickets_visible = "id=tickets-nav"

@@ -57,5 +57,5 @@ I register a user with username
 I should see the registration success message
     [Tags]   Wassim
     [Arguments]    ${successful_message_element}    ${successful_message}
-    Wait Until Element Is Visible    ${successful_message_element}  
+    Wait Until Element Is Visible    ${successful_message_element} 
     Element Should Contain    ${successful_message_element}    ${successful_message}
