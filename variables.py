@@ -59,6 +59,7 @@ expected_ticket_quantity = ""
 
 safari_dates_category = "id=safari-date"
 safari_weekend_date = "2025-04-19"
+safari_weekday_date = "2025-02-19"
 
 safari_type_category = "id=safari-type"
 herbivore_feeding_tour = "Herbivore Tour with Feeding"
@@ -70,5 +71,3 @@ alert_cart_message = "Item added to cart!"
 
 safari_weekend_denied_message = "VIP tickets required to book safaris on weekends."
 safari_vip_booking_denied_message = "Only VIP users can book the selected safari option."
-
-safari_weekday_date = "2025-02-19"

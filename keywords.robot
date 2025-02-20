@@ -34,6 +34,7 @@ I click the login button
 
 I should see an error message
     [Tags]    Andreas
+
     Wait Until Element Is Visible    ${error_message_element}
     Wait Until Element Contains    ${error_message_element}    ${error_message}
 
@@ -174,6 +175,7 @@ I Book Tours On The Weekend
 Select Safari Weekend Date
     [Tags]    Andreas
     Input Text    ${safari_dates_category}    ${safari_weekend_date}
+    Sleep    5s
 
 Select Safari Exclusive Tour
     [Tags]    Andreas
