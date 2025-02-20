@@ -13,18 +13,18 @@ Test Teardown    Close Browser
 Invalid Login
     [Tags]    Andreas
     [Documentation]    Testing an invalid login
-    Given I navigated to the login site
-    When I enter an invalid username and password
-    And I click the login button
-    Then I should see an error message
+    Given I Navigated To The Login Site
+    When I Enter An Invalid Username And Password
+    And I Click The Login Button
+    Then I Should See An Error Message
 
 Valid Login
     [Tags]    Andreas
     [Documentation]    Testing a valid login
-    Given I navigated to the login site
-    When I enter a valid username and password
-    And I click the login button
-    Then I should be logged in
+    Given I Navigated To The Login Site
+    When I Enter A Valid Username And Password
+    And I Click The Login Button
+    Then I Should Be Logged In
 
 Purchase Adult VIP-Tickets
     [Tags]    Martin
