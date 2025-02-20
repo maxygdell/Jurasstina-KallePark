@@ -1,3 +1,5 @@
+#Grupp 6 - Andreas J, Wassim, Martin.
+
 #Directory
 import os
 
@@ -59,7 +61,7 @@ expected_ticket_quantity = ""
 
 safari_dates_category = "id=safari-date"
 safari_weekend_date = "002025-04-19"
-safari_weekday_date = "2025-02-19"
+safari_weekday_date = "002025-02-19"
 
 safari_type_category = "id=safari-type"
 herbivore_feeding_tour = "Herbivore Tour with Feeding"
