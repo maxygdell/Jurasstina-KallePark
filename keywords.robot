@@ -9,69 +9,69 @@ Type In Element
     [Arguments]    ${id_element}    ${text_to_write}
     Input Text    ${id_element}    ${text_to_write}
 
-I am on the page
+I Am On The Page
     [Tags]    Andreas
     [Arguments]    ${url}    ${browser}    ${title}
     Open Browser    ${url}    ${browser}
     Title Should Be    ${title}
 
-I navigated to the login site
+I Navigated To The Login Site
     [Tags]    Andreas
     Execute JavaScript    document.getElementById('login-section').style.display = 'block'
 
-I am on the registration page
+I Am On The Registration Page
     [Tags]    Andreas
     Execute Javascript    document.getElementById('register-section').style.display = 'block'
 
-I enter an invalid username and password
+I Enter An Invalid Username And Password
     [Tags]    Andreas
     Type In Element    ${username_input_id}    ${invalid_username}
     Type In Element    ${password_input_id}    ${invalid_passwords}
 
-I click the login button
+I Click The Login Button
     [Tags]    Andreas
     Click Button    ${login_button}
 
-I should see an error message
+I Should See An Error Message
     [Tags]    Andreas
 
     Wait Until Element Is Visible    ${error_message_element}
     Wait Until Element Contains    ${error_message_element}    ${error_message}
 
-I enter a valid username and password
+I Enter A Valid Username And Password
     [Tags]    Andreas
     Type In Element    ${username_input_id}    ${valid_username}
     Type In Element    ${password_input_id}    ${valid_password}
 
-I should be logged in
+I Should Be Logged In
     [Tags]    Andreas
     Wait Until Element Is Visible    ${cart_visible}
 
-I have registered a valid user
+I Have Registered A Valid User
     [Tags]    Andreas
     Execute Javascript    document.getElementById('register-section').style.display = 'block'
     Type In Element    ${username_register_input_id}    ${valid_username}
     Type In Element    ${password_register_input_id}    ${valid_password}
     Click Button    ${register_button}
 
-I want to register the same user
+I Want To Register The Same User
     [Tags]    Andreas
     Type In Element    ${username_register_input_id}    ${valid_username}
     Type In Element    ${password_register_input_id}    ${valid_password}
     Click Button    ${register_button}
 
-I should see an failed to register message
+I Should See An Failed To Register Message
     [Tags]    Andreas
     Wait Until Element Is Visible    ${error_message_register_element}
     Wait Until Element Contains    ${error_message_register_element}    ${error_message_register}
 
 
-I should see an invalid password message
+I Should See An Invalid Password Message
     [Tags]    Andreas
     Wait Until Element Is Visible    ${error_message_register_element}
     Wait Until Element Contains    ${error_message_register_element}    ${error_message_password_register}
 
-I want to register a user using the wrong password length
+I Want To Register A User Using The Wrong Password Length
     [Tags]    Andreas
     FOR    ${invalid_password}    IN    @{invalid_passwords}
         Clear Element Text    ${username_register_input_id}
@@ -83,14 +83,14 @@ I want to register a user using the wrong password length
 
 Open Page And Register User
     [Tags]    Martin
-    I am on the page	${url}    ${browser}    ${title}
-    I have registered a valid user
+    I Am On The Page    ${url}    ${browser}    ${title}
+    I Have Registered A Valid User
 
 I Have Logged In With Valid Credentials
     [Tags]    Martin
-    I navigated to the login site
-    I enter a valid username and password
-    I click the login button
+    I Navigated To The Login Site
+    I Enter A Valid Username And Password
+    I Click The Login Button
     Wait Until Element Is Visible    ${cart_visible}
 
 I Navigate To The Buy Tickets Page
@@ -175,7 +175,6 @@ I Book Tours On The Weekend
 Select Safari Weekend Date
     [Tags]    Andreas
     Input Text    ${safari_dates_category}    ${safari_weekend_date}
-    Sleep    5s
 
 Select Safari Exclusive Tour
     [Tags]    Andreas
@@ -203,3 +202,14 @@ I Should See Safari Access Denied Message
     [Tags]    Andreas
     Wait Until Element Is Visible    ${error_message_element_safari}
     Wait Until Element Contains    ${error_message_element_safari}    ${safari_vip_booking_denied_message}
+
+Select Safari Date
+    [Tags]    Andreas
+    Input Text    ${safari_dates_category}    ${safari_weekend_date}
+
+I Have Logged In And Booked The Regular Tickets
+    [Tags]    Andreas
+    I Have Registered A Valid User
+    I Have Logged In With Valid Credentials
+    I Navigate To The Buy Tickets Page
+    I Added Two Regular Adult Tickets To Cart

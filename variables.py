@@ -58,7 +58,7 @@ expected_ticket_quantity_vip_child = "2 VIP Child Ticket(s) - $120"
 expected_ticket_quantity = ""
 
 safari_dates_category = "id=safari-date"
-safari_weekend_date = "2025-04-19"
+safari_weekend_date = "002025-04-19"
 safari_weekday_date = "2025-02-19"
 
 safari_type_category = "id=safari-type"
