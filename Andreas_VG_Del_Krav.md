@@ -1,5 +1,6 @@
 User Story:
 Som en användare vill jag kunna registrera ett unikt användarnamn på hemsidan. Så att ingen annan kan komma in på min sida.
+Som en användare vill jag att mitt lösenord skall vara säkert. Så att det ska vara svårare att gissa lösenordet. 
 
 Funktion:
 Användare kan registrera ett unikt användarnamn på hemsidan.
@@ -13,6 +14,7 @@ Testfall - Password Length Failure: Kollar att lösenordet man försöker regist
 
 User Story:
 Som ett system vill jag kunna skilja på användare som har köpt VIP-biljetter och de som inte har det. Genom att användaren har köpt VIP-biljetter så kan de boka safariturer på helger samt kunna boka VIP-exklusiva turer. Så att det ska gynna användaren att köpa VIP-biljetter.
+
 Funktion:
 Användare kan boka Safariturer på vardagar, användare som har köpt VIP-biljetter
 kan även boka safariturer på helger samt 2 VIP-exklusiva turer.

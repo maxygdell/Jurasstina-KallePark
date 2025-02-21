@@ -1,3 +1,5 @@
+#Grupp 6 - Andreas J, Wassim, Martin.
+
 *** Settings ***
 Library    SeleniumLibrary
 Variables    variables.py
