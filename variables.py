@@ -1,3 +1,5 @@
+#Grupp 6 - Andreas J, Wassim, Martin.
+
 #Directory
 import os
 
@@ -41,9 +43,14 @@ Ticketlink_element = '//*[@id="tickets-nav"]/a'
 alert_cart_message = "Item added to cart!"
 home_section = "id=home-section"
 Register_link = '//*[@id="register-nav"]/a'
+add_to_cart_button = "//*[@id='ticket-form']/button"
+cart_nav_button = "id=cart-nav"
+proceed_to_checkout_button = "id=checkout-button"
+
+safari_cart_button = "//*[@id='safari-form']/button"
 
 invalid_username = "qwerty1234"
-invalid_password = "asdf123"
+invalid_passwords = ["", "asdf123", "åäö"]
 valid_username = "KimMedFamiljen"
 valid_password = "Familj123"
 
@@ -51,14 +58,18 @@ valid_username2 = "Stina-Palle"
 valid_password2 = "Stina4251!"
 
 
+valid_username2 = "Stina-Palle"
+valid_password2 = "Stina4251!"
+
+
+error_message_element_safari = "//*[@id='safari-message']"
 error_message_element = "id=login-message"
 error_message = "Invalid username or password"
-successful_message_element = "id=register-message"
-successful_message = "Registration successful! Redirecting to login..."
 
+successful_message_element = ""
+successful_message = ""
 
-safari_type_category = "id=safari-type"
-safari_type = "Herbivore Tour"
-safari_nav = "id=safari-nav"
-safari_dates_category = "id=safari-date"
-safari_date = "27022025"
+buy_tickets_visible = "id=tickets-nav"
+
+test_variable = "Hello, Robot!"
+

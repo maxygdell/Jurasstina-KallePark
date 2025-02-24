@@ -251,12 +251,10 @@ document.getElementById("ticket-form").addEventListener("submit", function (e) {
     addToCart(ticketItem);
     document.getElementById("ticket-form").reset();
 });
-
-
 /* ========= Safari Booking ========= */
 document.getElementById("safari-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    clearMessages(); // ADD THIS LINE - clears messages BEFORE processing
+    clearMessages();
 
     if (!currentUser) {
         alert("You must be logged in to book a safari.");
@@ -264,26 +262,36 @@ document.getElementById("safari-form").addEventListener("submit", function (e) {
         return;
     }
 
-    const safariDate = document.getElementById("safari-date").value;
+    const safariDateInput = document.getElementById("safari-date").value;
     const safariType = document.getElementById("safari-type").value;
 
-    if (!safariDate) {
+    if (!safariDateInput) {
         showMessage("safari-message", "Please select a date for your safari booking.", false);
         return;
     }
-
     if (!safariType) {
         showMessage("safari-message", "Please select a type for your safari booking.", false);
         return;
     }
 
-    const selectedDate = new Date(safariDate);
+    // Parse and standardize the date
+    const selectedDate = new Date(safariDateInput);
+
+    if (isNaN(selectedDate.getTime())) {
+        showMessage("safari-message", "Invalid date selected.", false);
+        return;
+    }
+
+    // Format date consistently as YYYY-MM-DD
+    const formattedDate = selectedDate.toISOString().split('T')[0];
+
     const day = selectedDate.getDay(); // 0 (Sun) to 6 (Sat)
 
-    // Check VIP Status (Get from local storage)
-    let storedUsers = getUsers();
-    let storedUser = storedUsers.find(u => u.username === currentUser.username);
-    let isVip = storedUser ? storedUser.vip : false;
+    // VIP Status check
+    const storedUsers = getUsers();
+    const storedUser = storedUsers.find(u => u.username === currentUser.username);
+    const isVip = storedUser ? storedUser.vip : false;
+
     if (!isVip && (safariType === "Herbivore Tour with Feeding" || safariType === "T-Rex Rumble eXtreme Thrill Pack")) {
         showMessage("safari-message", "Only VIP users can book the selected safari option.", false);
         return;
@@ -292,6 +300,7 @@ document.getElementById("safari-form").addEventListener("submit", function (e) {
     const cart = getCart();
     const hasTicket = cart.some(item => item.itemType === "ticket");
     const hasVipTicket = cart.some(item => item.itemType === "ticket" && item.category === "VIP");
+
     if (!hasTicket) {
         showMessage("safari-message", "You must purchase a general admission ticket before booking a safari.", false);
         return;
@@ -302,23 +311,25 @@ document.getElementById("safari-form").addEventListener("submit", function (e) {
         return;
     }
 
-    selectedDate.setHours(0, 0, 0, 0);
+    // Check if date is in the past
     const today = new Date();
     today.setHours(0, 0, 0, 0);
+    selectedDate.setHours(0, 0, 0, 0);
+
     if (selectedDate < today) {
         showMessage("safari-message", "You cannot book a safari for a date in the past.", false);
         return;
     }
 
     const safariPrice = safariPrices[safariType] || 0;
-
     const safariItem = {
-        description: `${safariType} on ${safariDate}`,
-        date: safariDate,
+        description: `${safariType} on ${formattedDate}`,
+        date: formattedDate, // Use consistent formatted date
         type: safariType,
         price: safariPrice,
         itemType: "safari"
     };
+
     addToCart(safariItem);
     document.getElementById("safari-form").reset();
 });
@@ -386,6 +397,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('logout-link').addEventListener('click', function (event) {
         event.preventDefault();
+        const cart = getCart();
+        if (cart.length >0) {
+            localStorage.removeItem("cart");
+        }
         logout();
     });
 });
