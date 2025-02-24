@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables    variables.py
+Variables   variables.py
 Resource    keywords.robot
 Test Setup    I am on the page    ${url}    ${browser}    ${title}
 Test Teardown    Close Browser
@@ -33,5 +33,5 @@ Book Herbivore Tour
     and i Select Herbivore Tour safari      ${safari_type}
     When i Choose Safari Date                 ${safari_date}
     And I add the tours to cart     
-    then I Can Proceed To Checkout
+    then I Can go To Checkout
 

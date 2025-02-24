@@ -2,6 +2,7 @@
 
 *** Settings ***
 Library    SeleniumLibrary
+Variables  variables.py
 
 *** Keywords ***
 
@@ -59,7 +60,7 @@ I Have Registered A Valid User
 I register a user with username
     [Tags]   Wassim
     [Arguments]   ${username}  ${password}
-    Click Link    ${Register_link}
+    Click Link     ${Register_link}
     Input Text    ${username_register_input_id}    ${username}
     Input Text    ${password_register_input_id}    ${password}
     Click Button  ${register_button}
@@ -70,11 +71,12 @@ I should see the registration success message
     [Arguments]    ${successful_message_element}    ${successful_message}
     Wait Until Element Is Visible    ${successful_message_element}  timeout=5s
     Element Should Contain    ${successful_message_element}    ${successful_message}
-    Wait Until Element Is Visible  ${login_Section}  timeout=10s
+     Wait Until Element Is Visible  ${login_Section}  timeout=10s
 
 Iam registered and logged in 
     I register a user with username  ${valid_username2}  ${valid_password2}
     I am logged in with valid credentials    ${valid_username2}    ${valid_password2} 
+    
 
 I am logged in with valid credentials
     [Arguments]     ${valid_username2}    ${valid_password2} 
@@ -96,9 +98,6 @@ I Add one Regular Tickets To Cart
     Alert Should Be Present   ${alert_cart_message}  
 
 
-
-
-
 When i Choose Safari Date
       [Arguments]    ${safari_date}
       I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
@@ -116,10 +115,10 @@ I add the tours to cart
     sleep  10  
      Handle Alert
 
- I Can Proceed To Checkout
+ I Can go To Checkout
     
-    Click Element   ${cart_nav}
-    Click Button    ${checkout_button}
+    Click Element   ${cart_nav_button}
+    Click Button    ${proceed_to_checkout_button}
    
  
 I Want To Register The Same User
