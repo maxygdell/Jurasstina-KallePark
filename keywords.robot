@@ -167,6 +167,7 @@ I Add The VIP Safari Tours
     Select Safari Weekend Date
     Select Safari Exclusive Tour
     Click Button    ${safari_cart_button}
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
 I Book Tours On The Weekend
     [Tags]    Andreas
