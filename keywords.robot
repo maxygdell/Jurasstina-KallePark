@@ -216,3 +216,9 @@ I Have Logged In And Booked The Regular Tickets
     I Have Logged In With Valid Credentials
     I Navigate To The Buy Tickets Page
     I Added Two Regular Adult Tickets To Cart
+
+I Add The VIP Safari Tours That Should Fail
+    [Tags]    Andreas
+    Select Safari Weekend Date
+    Select Safari Exclusive Tour
+    Click Button    ${safari_cart_button}
