@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 Variables   variables.py
 Resource    keywords.robot
-Test Setup    I am on the page    ${url}    ${browser}    ${title}
+Test Setup    I Am On The Page    ${url}    ${browser}    ${title}
 Test Teardown    Close Browser
 
 
@@ -30,8 +30,8 @@ Book Herbivore Tour
     [Tags]   wassim
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
     Given Iam registered and logged in 
-    and i Select Herbivore Tour safari      ${safari_type}
-    When i Choose Safari Date                 ${safari_date}
+    And I Select Herbivore Tour safari      ${safari_type}
+    When I Choose Safari Date                 ${safari_date}
     And I add the tours to cart     
-    then I Can go To Checkout
+    Then I Can go To Checkout
 

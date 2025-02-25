@@ -98,22 +98,21 @@ I Add one Regular Tickets To Cart
     Alert Should Be Present   ${alert_cart_message}  
 
 
-When i Choose Safari Date
-      [Arguments]    ${safari_date}
-      I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
-       Click Element   ${safari_nav}
-    Input Text    ${safari_dates_category}    27022025
+I Choose Safari Date
+    [Arguments]    ${safari_date}
+    I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
+    Click Element   ${safari_nav}
+    Input Text    ${safari_dates_category}    ${safari_weekday_date}
 
 
-And i Select Herbivore Tour safari
+I Select Herbivore Tour safari
     [Arguments]    ${safari_type}   
     Select From List By Value   ${safari_type_category}   Herbivore Tour
     
 
 I add the tours to cart
-    Click Button    ${safari_cart_button}  
-    sleep  10  
-     Handle Alert
+    Click Button    ${safari_cart_button}   
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout
     
