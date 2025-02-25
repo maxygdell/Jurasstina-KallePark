@@ -243,6 +243,10 @@ Select Safari Weekend Date
     [Tags]    Andreas
     Input Text    ${safari_dates_category}    ${safari_weekend_date}
 
+Select Safari Weekday Date
+    [Tags]    Andreas
+    Input Text    ${safari_dates_category}    ${safari_weekday_date}
+
 Select Safari Exclusive Tour
     [Tags]    Andreas
     Select From List By Value    ${safari_type_category}    ${herbivore_feeding_tour}
@@ -281,8 +285,8 @@ I Have Logged In And Booked The Regular Tickets
     I Navigate To The Buy Tickets Page
     I Added Two Regular Adult Tickets To Cart
 
-I Add The VIP Safari Tours That Should Fail
+I Add The VIP Safari Tour on Weekday
     [Tags]    Andreas
-    Select Safari Weekend Date
+    Select Safari Weekday Date
     Select Safari Exclusive Tour
     Click Button    ${safari_cart_button}

@@ -34,5 +34,5 @@ Non VIP User Cannot Book Exclusive Tours
     [Documentation]    Verify that users without VIP tickets cannot book exclusive safari tours
     Given I Have Logged In And Booked The Regular Tickets
     When I Navigate To The Book Safaris Page
-    And I Add The VIP Safari Tours That Should Fail
+    And I Add The VIP Safari Tour On Weekday
     Then I Should See Safari Access Denied Message
