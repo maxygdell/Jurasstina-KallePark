@@ -12,7 +12,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 
 Invalid Login
-    [Tags]    Andreas
+    [Tags]    new-feature
     [Documentation]    Testing an invalid login
     Given I Navigated To The Login Site
     When I Enter An Invalid Username And Password
