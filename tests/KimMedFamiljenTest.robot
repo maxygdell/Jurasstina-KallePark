@@ -20,7 +20,7 @@ Invalid Login
     Then I Should See An Error Message
 
 Valid Login
-    [Tags]    Andreas
+    [Tags]    new-feature
     [Documentation]    Testing a valid login
     Given I Navigated To The Login Site
     When I Enter A Valid Username And Password
