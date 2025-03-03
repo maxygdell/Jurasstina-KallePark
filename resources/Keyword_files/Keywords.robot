@@ -2,7 +2,7 @@
 
 *** Settings ***
 Library    SeleniumLibrary
-Variables  variables.py
+Variables  ${EXECDIR}/Util/variables.py
 
 *** Keywords ***
 
