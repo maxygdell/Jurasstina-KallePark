@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables   variables.py
-Resource    keywords.robot
+Resource    ${EXECDIR}/Resources/Keyword_files/Keywords.robot
 Test Setup    I Am On The Page    ${url}    ${browser}    ${title}
 Test Teardown    Close Browser
 
