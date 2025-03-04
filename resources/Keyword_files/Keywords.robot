@@ -4,6 +4,10 @@
 Library    SeleniumLibrary
 Variables  ${EXECDIR}/util/variables.py
 
+*** Variables ***
+${HTML_PATH}    file://${EXECDIR}/JuraStinaKallePark/jurap.html
+${url}=    ${HTML_PATH}    
+
 *** Keywords ***
 
 Type In Element
@@ -13,8 +17,8 @@ Type In Element
 
 I Am On The Page
     [Tags]    Andreas
-    [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}
+    [Arguments]    ${HTML_PATH}    ${browser}    ${title}
+    Open Browser    ${HTML_PATH}    ${browser}
     Title Should Be    ${title}
 
 I Navigated To The Login Site

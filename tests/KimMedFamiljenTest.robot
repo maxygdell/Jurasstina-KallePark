@@ -4,8 +4,8 @@
 Documentation    Testing the JuraStinaKallePark Page
 Library    SeleniumLibrary
 Variables   ${EXECDIR}/util/variables.py
-Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
-Resource    ${EXECDIR}/resources/keyword_files/KimMedFamiljen_keywords.robot
+Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/Keyword_files/KimMedFamiljen_keywords.robot
 Test Setup    Open Page And Register User
 Test Teardown    Close Browser
 
