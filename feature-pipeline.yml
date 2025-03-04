@@ -1,11 +1,11 @@
 trigger:
   branches:
     include:
-      - Features
+      - features/*
     
-    exlude:
+    exclude:
       - main
-      - Develop
+      - develop
 pool:
   vmImage: 'ubuntu-latest'
 

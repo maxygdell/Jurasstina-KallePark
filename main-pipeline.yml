@@ -4,8 +4,8 @@ trigger:
       - main
     
     exclude:
-      - Develop
-      - Features
+      - develop
+      - features/*
 pool:
   vmImage: 'ubuntu-latest'
 
