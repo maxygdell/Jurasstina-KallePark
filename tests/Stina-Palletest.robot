@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables   ${EXECDIR}/util/variables.py
-Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
-Resource    ${EXECDIR}/resources/Keyword_files/StinaPalle_keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/StinaPalle_keywords.robot
 Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
 Test Teardown    Close Browser
 
@@ -26,7 +26,5 @@ Book Herbivore Tour
     [Tags]   wassim
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
     Given Iam registered and logged in
-    Sleep    5s
     When I Choose Safari Date
-    Sleep    5s
     Then I Can go To Checkout
