@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Variables   ${EXECDIR}/Util/variables.py
 Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
 Resource    ${EXECDIR}/resources/Keyword_files/StinaPalle_keywords.robot
-Test Setup    I Am On The Page    ${url}    ${browser}    ${title}
+Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
 Test Teardown    Close Browser
 
 
