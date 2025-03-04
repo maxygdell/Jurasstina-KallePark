@@ -6,6 +6,7 @@ Variables  ${EXECDIR}/util/variables.py
 
 *** Variables ***
 ${HTML_PATH}    file://${EXECDIR}/website/jurap.html
+${url}=    ${HTML_PATH}    
 
 *** Keywords ***
 
