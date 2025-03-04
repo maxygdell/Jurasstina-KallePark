@@ -3,7 +3,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables  ${EXECDIR}/util/variables.py
-Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
 
 *** Keywords ***
 
