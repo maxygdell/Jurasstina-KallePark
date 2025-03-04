@@ -26,6 +26,5 @@ Book Herbivore Tour
     [Tags]   wassim
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
     Given Iam registered and logged in 
-    And I Select Herbivore Tour safari      ${safari_type}
     When I Choose Safari Date                 ${safari_date}    
     Then I Can go To Checkout
