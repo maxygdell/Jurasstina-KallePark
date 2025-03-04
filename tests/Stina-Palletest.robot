@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables   ${EXECDIR}/Util/variables.py
+Variables   ${EXECDIR}/util/variables.py
 Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
 Resource    ${EXECDIR}/resources/Keyword_files/StinaPalle_keywords.robot
 Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
