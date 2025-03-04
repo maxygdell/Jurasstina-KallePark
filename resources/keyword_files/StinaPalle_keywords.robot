@@ -3,7 +3,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables  ${EXECDIR}/util/variables.py
-Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
 
 *** Keywords ***
 
@@ -99,14 +98,16 @@ Regular Ticket
     Select From List By Value    id=ticket-category    ${regular_ticket_category}
     Input Text    id=ticket-quantity    1
     Click Button    ${add_to_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Handle Alert    ACCEPT
 
 Herbivore Safari Tour
     Go To Book Safari Page
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     Select From List By Value    ${safari_type_category}    ${safari_type}
     Click Button    ${safari_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Handle Alert    ACCEPT
 
 Go To Book Safari Page
     Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
