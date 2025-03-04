@@ -46,12 +46,13 @@ I Add one Regular Tickets To Cart
 
 I Choose Safari Date
     I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
-    Click Element   ${safari_nav}
+    Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
+    Wait Until Element Is Visible    ${safari_type_category}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
     Click Button    ${safari_cart_button}
-    Wait Until Keyword Succeeds    5x    2s    Alert Should Be Present    ${alert_cart_message}    ACCEPT
-    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    
 
 I Select Herbivore Tour safari
     Select From List By Value   ${safari_type_category}   Herbivore Tour
