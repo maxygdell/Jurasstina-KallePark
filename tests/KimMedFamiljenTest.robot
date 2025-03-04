@@ -3,9 +3,9 @@
 *** Settings ***
 Documentation    Testing the JuraStinaKallePark Page
 Library    SeleniumLibrary
-Variables   ${EXECDIR}/Util/variables.py
-Resource    ${EXECDIR}/Resources/Keyword_files/Keywords.robot
-Resource    ${EXECDIR}/Resources/Keyword_files/KimMedFamiljen_keywords.robot
+Variables   ${EXECDIR}/util/variables.py
+Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/KimMedFamiljen_keywords.robot
 Test Setup    Open Page And Register User
 Test Teardown    Close Browser
 
@@ -20,7 +20,7 @@ Invalid Login
     Then I Should See An Error Message
 
 Valid Login
-    [Tags]    Andreas
+    [Tags]    new-feature
     [Documentation]    Testing a valid login
     Given I Navigated To The Login Site
     When I Enter A Valid Username And Password

@@ -1,14 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables   ${EXECDIR}/Util/variables.py
-Resource    ${EXECDIR}/Resources/Keyword_files/Keywords.robot
-Resource    ${EXECDIR}/Resources/Keyword_files/StinaPalle_keywords.robot
-Test Setup    I Am On The Page    ${url}    ${browser}    ${title}
+Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/StinaPalle_keywords.robot
+Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
 Test Teardown    Close Browser
-
-
-
-
 
 *** Test Cases ***
 
@@ -26,7 +22,6 @@ Purchase Regular Tickets
     Given Iam registered and logged in    
     When I Add one Regular Tickets To Cart      ${ticket_type}  ${ticket_option}  ${ticket_quantity}
    
-
 Book Herbivore Tour
     [Tags]   wassim
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
@@ -35,4 +30,3 @@ Book Herbivore Tour
     When I Choose Safari Date                 ${safari_date}
     And I add the tours to cart     
     Then I Can go To Checkout
-
