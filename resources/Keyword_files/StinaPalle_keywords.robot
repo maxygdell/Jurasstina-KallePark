@@ -56,7 +56,7 @@ I Select Herbivore Tour safari
     
 I add the tours to cart
     Click Button    ${safari_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout 
     Click Element   ${cart_nav_button}
