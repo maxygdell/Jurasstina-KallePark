@@ -45,16 +45,14 @@ I Add one Regular Tickets To Cart
     Alert Should Be Present   ${alert_cart_message}    ACCEPT
 
 I Choose Safari Date
-    [Arguments]    ${safari_date}
     I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
     Click Element   ${safari_nav}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
-    I Select Herbivore Tour safari    ${safari_type}
+    I Select Herbivore Tour safari
     Click Button    ${safari_cart_button}
     Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
 I Select Herbivore Tour safari
-    [Arguments]    ${safari_type}
     Select From List By Value   ${safari_type_category}   Herbivore Tour
     
 I add the tours to cart
