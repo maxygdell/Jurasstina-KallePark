@@ -17,9 +17,9 @@ I register a user with username
 I should see the registration success message
     [Tags]   Wassim
     [Arguments]    ${successful_message_element}    ${successful_message}
-    Wait Until Element Is Visible    ${successful_message_element}  timeout=5s
+    Wait Until Element Is Visible    ${successful_message_element}
     Element Should Contain    ${successful_message_element}    ${successful_message}
-    Wait Until Element Is Visible  ${login_Section}  timeout=10s
+    Wait Until Element Is Visible  ${login_Section}
 
 Iam registered and logged in 
     I register a user with username  ${valid_username2}  ${valid_password2}
@@ -28,11 +28,11 @@ Iam registered and logged in
 I am logged in with valid credentials
     [Arguments]     ${valid_username2}    ${valid_password2}
     Click Link    ${loginlink_element}
-    Wait Until Element Is Visible    ${login_Section}  timeout=5s
+    Wait Until Element Is Visible    ${login_Section}
     Input Text    ${username_input_id}    ${valid_username2}
     Input Text    ${password_input_id}     ${valid_password2}
     Click Button    ${login_button}
-    Wait Until Element Is Visible  ${home_section}  timeout=5s
+    Wait Until Element Is Visible  ${home_section}
   
 I Add one Regular Tickets To Cart
     [Arguments]    ${ticket_type}    ${ticket_option}    ${ticket_quantity}
@@ -41,7 +41,7 @@ I Add one Regular Tickets To Cart
     Select From List By Value      ${ticket_category_selector}    ${ticket_option}
     Input Text    ${ticket_quantity}    1
     Click Button    ${add_to_cart_button}
-    Alert Should Be Present   ${alert_cart_message}
+    Alert Should Be Present   ${alert_cart_message}    ACCEPT
 
 I Choose Safari Date
     [Arguments]    ${safari_date}
