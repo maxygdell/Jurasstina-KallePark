@@ -27,6 +27,5 @@ Book Herbivore Tour
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
     Given Iam registered and logged in 
     And I Select Herbivore Tour safari      ${safari_type}
-    When I Choose Safari Date                 ${safari_date}
-    And I add the tours to cart     
+    When I Choose Safari Date                 ${safari_date}    
     Then I Can go To Checkout

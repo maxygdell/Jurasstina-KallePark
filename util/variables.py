@@ -3,7 +3,6 @@
 #Directory
 import os
 
-
 current_directory = os.getcwd().replace('\\', '/')
 
 #variables
