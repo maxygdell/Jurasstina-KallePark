@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 Variables  ${EXECDIR}/util/variables.py
 
 *** Variables ***
-${HTML_PATH}    file://${EXECDIR}/website/jurap.html
+${HTML_PATH}    file://${EXECDIR}/JuraStinaKallePark/jurap.html
 ${url}=    ${HTML_PATH}    
 
 *** Keywords ***
