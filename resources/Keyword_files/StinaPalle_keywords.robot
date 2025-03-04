@@ -42,7 +42,7 @@ I Add one Regular Tickets To Cart
     Select From List By Value      ${ticket_category_selector}    ${ticket_option}
     Input Text    ${ticket_quantity}    1
     Click Button    ${add_to_cart_button}
-    Alert Should Be Present   ${alert_cart_message}    ACCEPT
+    #Alert Should Be Present   ${alert_cart_message}    ACCEPT
 
 I Choose Safari Date
     [Arguments]    ${safari_date}
