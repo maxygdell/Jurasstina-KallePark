@@ -35,8 +35,8 @@ steps:
   # Kör Robot Framework-testerna med Xvfb
   - script: |
       export DISPLAY=:99
-      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
-    displayName: 'Run Tests tagged with new-feature'
+      robot --include new-feature-video --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
+    displayName: 'Run Tests tagged with new-feature-video'
 
   # Stoppa inspelningen när testet är klart
   - script: |
