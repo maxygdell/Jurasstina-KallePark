@@ -9,10 +9,10 @@ Variables  ${EXECDIR}/util/variables.py
 I register a user with username
     [Tags]   Wassim
     [Arguments]   ${username}  ${password}
-    Click Link     ${Register_link}
+    Click Link    ${Register_link}
     Input Text    ${username_register_input_id}    ${username}
     Input Text    ${password_register_input_id}    ${password}
-    Click Button  ${register_button}
+    Click Button    ${register_button}
      
 I should see the registration success message
     [Tags]   Wassim
@@ -50,17 +50,17 @@ I Choose Safari Date
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
     I add the tours to cart
-    
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
 I Select Herbivore Tour safari
     Select From List By Value   ${safari_type_category}   Herbivore Tour
     
 I add the tours to cart
     Click Button    ${safari_cart_button}
-    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout 
-    Click Element   ${cart_nav_button}
+    Click Element    ${cart_nav_button}
     Click Button    ${proceed_to_checkout_button}
 
 
