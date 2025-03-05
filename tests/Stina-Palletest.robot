@@ -23,7 +23,7 @@ Purchase Regular Tickets
     When I Add one Regular Tickets To Cart      ${ticket_type}    ${ticket_option}    ${ticket_quantity}
    
 Book Herbivore Tour
-    [Tags]   wassim
+    [Tags]   new-feature
     [Documentation]    Testar att logga in och boka "Herbivore Tour".
     Given Iam registered and logged in
     When I Choose Safari Date
