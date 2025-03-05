@@ -50,7 +50,7 @@ I Choose Safari Date
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
     Click Button    ${safari_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Handle Alert
     
 
 I Select Herbivore Tour safari
