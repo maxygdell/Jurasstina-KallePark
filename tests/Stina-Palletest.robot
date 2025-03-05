@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 Variables   ${EXECDIR}/util/variables.py
-Resource    ${EXECDIR}/resources/Keyword_files/Keywords.robot
-Resource    ${EXECDIR}/resources/Keyword_files/StinaPalle_keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/StinaPalle_keywords.robot
 Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
 Test Teardown    Close Browser
 
@@ -28,3 +28,11 @@ Book Herbivore Tour
     Given Iam registered and logged in
     When I Choose Safari Date
     Then I Can go To Checkout
+
+### New testcase to verify if it still fails handle alert
+
+#Book A Herbivore Safari Tour
+    #[Documentation]    Kopia av Book Herbivore Tour men omgjord från grunden med nya keywords.
+    #Given I Have Navigated To Buy Tickets Page While Logged In
+    #When I Add A Regular Ticket And A Safari Tour To Cart
+    #Then I Want To Proceed To Checkout
