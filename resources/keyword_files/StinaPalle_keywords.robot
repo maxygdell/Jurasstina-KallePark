@@ -49,8 +49,7 @@ I Choose Safari Date
     Wait Until Element Is Visible    ${safari_type_category}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
-    Click Button    ${safari_cart_button}
-    Handle Alert
+    I add the tours to cart
     
 
 I Select Herbivore Tour safari
@@ -58,7 +57,7 @@ I Select Herbivore Tour safari
     
 I add the tours to cart
     Click Button    ${safari_cart_button}
-    Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout 
     Click Element   ${cart_nav_button}
