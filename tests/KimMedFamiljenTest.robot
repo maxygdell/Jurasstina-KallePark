@@ -6,6 +6,7 @@ Library    SeleniumLibrary
 Variables   ${EXECDIR}/util/variables.py
 Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
 Resource    ${EXECDIR}/resources/keyword_files/KimMedFamiljen_keywords.robot
+Resource    ${EXECDIR}/resources/keyword_files/StinaPalle_keywords.robot
 Test Setup    Open Page And Register User
 Test Teardown    Close Browser
 
@@ -53,3 +54,9 @@ Purchase Safari With Close Encounter On Weekend
     When I Add The VIP Safari Tours
     Then The Cart Should Be Updated
     And I Can Proceed To Checkout
+
+Book A Herbivore Safari Tour
+    [Documentation]    Kopia av Book Herbivore Tour men omgjord från grunden med nya keywords.
+    Given I Have Navigated To Buy Tickets Page While Logged In
+    When I Add A Regular Ticket And A Safari Tour To Cart
+    Then I Want To Proceed To Checkout
