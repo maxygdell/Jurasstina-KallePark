@@ -50,7 +50,6 @@ I Choose Safari Date
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
     Click Button    ${safari_cart_button}
-    Sleep    10s
     Handle Alert
     
 
