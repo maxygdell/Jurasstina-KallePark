@@ -12,45 +12,47 @@ pool:
 
 steps:
 
-  # Installera Xvfb (virtuell skärm) och ffmpeg (videoinspelning)
+  # 1️⃣ Installera dependencies
+  - template: templates/install-dependencies.yaml
+
+  # 2️⃣ Installera Xvfb & ffmpeg
   - script: |
       sudo apt-get update
       sudo apt-get install -y xvfb ffmpeg
     displayName: 'Install Xvfb & ffmpeg'
 
-  # Starta den virtuella skärmen
+  # 3️⃣ Starta Xvfb (virtuell skärm)
   - script: |
       Xvfb :99 -screen 0 1920x1080x24 &
-      echo "DISPLAY=:99" >> $GITHUB_ENV
+      echo "export DISPLAY=:99" >> ~/.bashrc
+      echo "DISPLAY=:99" >> $HOME/.bash_profile
+      export DISPLAY=:99
     displayName: 'Start Xvfb'
 
-  # Starta inspelningen av testet
+  # 4️⃣ Starta inspelning med ffmpeg
   - script: |
       ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :99 -codec:v libx264 -preset ultrafast results/test_run.mp4 &
     displayName: 'Start video recording'
 
-  # Installera beroenden
-  - template: templates/install-dependencies.yaml
-
-  # Kör Robot Framework-testerna med Xvfb
+  # 5️⃣ Kör Robot Framework-testerna
   - script: |
       export DISPLAY=:99
       robot --include new-feature-video --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
     displayName: 'Run Tests tagged with new-feature-video'
 
-  # Stoppa inspelningen när testet är klart
+  # 6️⃣ Stoppa inspelningen när testet är klart
   - script: |
       pkill -f ffmpeg
     displayName: 'Stop video recording'
 
-  # Publicera Robot Framework-rapporterna som artefakter
+  # 7️⃣ Publicera Robot Framework-rapporter som artefakter
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(System.DefaultWorkingDirectory)/results/logs/'
       artifactName: 'robot-reports-feature'
     displayName: 'Publish Robot Framework Reports'
 
-  # Publicera videon som en pipeline-artefakt
+  # 8️⃣ Publicera testvideon som en pipeline-artefakt
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(System.DefaultWorkingDirectory)/results/test_run.mp4'
