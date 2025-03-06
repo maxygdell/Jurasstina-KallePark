@@ -6,7 +6,7 @@ import os
 current_directory = os.getcwd().replace('\\', '/')
 
 #variables
-browser = "chrome"
+browser = "headlesschrome"
 #url = f"{current_directory}/JuraStinaKallePark/jurap.html"
 title = "Jura-Stina-Kalle Park"
 
