@@ -13,7 +13,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 
 Invalid Login
-    [Tags]   1234
+    [Tags]   Andreas
     [Documentation]    Testing an invalid login
     Given I Navigated To The Login Site
     When I Enter An Invalid Username And Password
@@ -21,7 +21,7 @@ Invalid Login
     Then I Should See An Error Message
 
 Valid Login
-    [Tags]    n1234
+    [Tags]    Andreas
     [Documentation]    Testing a valid login
     Given I Navigated To The Login Site
     When I Enter A Valid Username And Password
