@@ -35,6 +35,10 @@ steps:
       echo $! > results/ffmpeg_pid.txt  
     # Spara PID för att kunna stoppa den senare
     displayName: 'Start video recording'
+    
+ # 5️⃣ 🆕 Debugga om Chrome körs innan testerna startas
+  - script: ps aux | grep chrome
+    displayName: 'Check if Chrome is running
 
   # 5️⃣ Kör Robot Framework-testerna
   - script: |
