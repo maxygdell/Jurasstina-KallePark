@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Variables   ${EXECDIR}/util/variables.py
 Resource    ${EXECDIR}/resources/keyword_files/Keywords.robot
 Resource    ${EXECDIR}/resources/keyword_files/StinaPalle_keywords.robot
-Test Setup    I Am On The Page    ${HTML_PATH}    ${browser}    ${title}
+Test Setup    Open Browser    ${HTML_PATH}    browser=${browser}    options=--disable-gpu --no-sandbox --disable-dev-shm-usage --remote-debugging-port=9222
 Test Teardown    Close Browser
 
 *** Test Cases ***
@@ -32,7 +32,7 @@ Book Herbivore Tour
 ### New testcase to verify if it still fails handle alert
 
 Book A Herbivore Safari Tour
-    [Tags]    new-feature
+    [Tags]    new-feature-video
     [Documentation]    Kopia av Book Herbivore Tour men omgjord från grunden med nya keywords.
     Given I Have Navigated To Buy Tickets Page While Logged In
     When I Add A Regular Ticket And A Safari Tour To Cart
