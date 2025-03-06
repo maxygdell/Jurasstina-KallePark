@@ -31,30 +31,36 @@ steps:
 
   # 4️⃣ Starta inspelning med ffmpeg
   - script: |
-      ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :99 -codec:v libx264 -preset ultrafast results/test_run.mp4 &
+      ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :99 -codec:v libx264 -preset ultrafast results/test_run.mp4 &
+      echo $! > results/ffmpeg_pid.txt  # Spara PID för att kunna stoppa den senare
     displayName: 'Start video recording'
 
   # 5️⃣ Kör Robot Framework-testerna
   - script: |
       export DISPLAY=:99
-      robot --include new-feature-video --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
-    displayName: 'Run Tests tagged with new-feature-video'
+      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
+    displayName: 'Run Tests tagged with new-feature'
 
-  # 6️⃣ Stoppa inspelningen när testet är klart
+  # 6️⃣ Stoppa inspelningen även om testet failar
   - script: |
-      pkill -f ffmpeg
+      if [ -f results/ffmpeg_pid.txt ]; then
+        kill $(cat results/ffmpeg_pid.txt)
+      fi
     displayName: 'Stop video recording'
+    condition: always()
 
-  # 7️⃣ Publicera Robot Framework-rapporter som artefakter
+  # 7️⃣ Publicera Robot Framework-rapporter även vid fail
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(System.DefaultWorkingDirectory)/results/logs/'
       artifactName: 'robot-reports-feature'
     displayName: 'Publish Robot Framework Reports'
+    condition: always()
 
-  # 8️⃣ Publicera testvideon som en pipeline-artefakt
+  # 8️⃣ Publicera testvideon även vid fail
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(System.DefaultWorkingDirectory)/results/test_run.mp4'
       artifactName: 'Test Recording'
     displayName: 'Upload test video'
+    condition: always()
