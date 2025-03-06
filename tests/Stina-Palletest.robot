@@ -32,7 +32,7 @@ Book Herbivore Tour
 ### New testcase to verify if it still fails handle alert
 
 Book A Herbivore Safari Tour
-    [Tags]    new-feature
+    [Tags]    new-feature-video
     [Documentation]    Kopia av Book Herbivore Tour men omgjord från grunden med nya keywords.
     Given I Have Navigated To Buy Tickets Page While Logged In
     When I Add A Regular Ticket And A Safari Tour To Cart
