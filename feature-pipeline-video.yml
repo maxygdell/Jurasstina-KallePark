@@ -32,13 +32,14 @@ steps:
   # 4️⃣ Starta inspelning med ffmpeg
   - script: |
       ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :99 -codec:v libx264 -preset ultrafast results/test_run.mp4 &
-      echo $! > results/ffmpeg_pid.txt  # Spara PID för att kunna stoppa den senare
+      echo $! > results/ffmpeg_pid.txt  
+    # Spara PID för att kunna stoppa den senare
     displayName: 'Start video recording'
 
   # 5️⃣ Kör Robot Framework-testerna
   - script: |
       export DISPLAY=:99
-      robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
+      robot --include new-feature-video --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/
     displayName: 'Run Tests tagged with new-feature'
 
   # 6️⃣ Stoppa inspelningen även om testet failar
