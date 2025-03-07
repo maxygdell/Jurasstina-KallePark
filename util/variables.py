@@ -76,9 +76,9 @@ expected_ticket_quantity = ""
 
 safari_dates_category = "id=safari-date"
 safari_weekend_date = "002025-04-19"
-safari_weekday_date = "05-20-2025"
+safari_weekday_date = "002025-05-20"
 
-safari_type_category = "id=safari-type"
+
 herbivore_feeding_tour = "Herbivore Tour with Feeding"
 rumble_thrill = "T-Rex Rumble eXtreme Thrill Pack"
 
@@ -94,3 +94,4 @@ safari_type = "Herbivore Tour"
 safari_nav = "id=safari-nav"
 safari_dates_category = "id=safari-date"
 safari_date = "27022025"
+safari_element_max = "#safari-type > option:nth-child(1)"

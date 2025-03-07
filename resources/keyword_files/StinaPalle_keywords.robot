@@ -49,18 +49,20 @@ I Choose Safari Date
     I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
     #Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
     Sleep    2s
-    Click Element    id=safari-nav    
+    Click Element    id:safari-nav    
     Wait Until Element Is Visible    ${safari_type_category}
+    Clear Element Text    ${safari_dates_category}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
     I add the tours to cart
 
-
 I Select Herbivore Tour safari
-    Select From List By Value   ${safari_type_category}   ${safari_type}
+    #Select From List By Value   ${safari_type_category}   ${safari_type}
+    Click Element    css:${safari_element_max}
+    
     
 I add the tours to cart
-    Click Button    Add to Cart
+    Click Button    css:#safari-form > button
     #Click Button    ${safari_cart_button}
     #Alert Should Be Present    ${alert_cart_message}    ACCEPT
     Sleep    3s
