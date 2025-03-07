@@ -43,6 +43,7 @@ I Add one Regular Tickets To Cart
     Input Text    ${ticket_quantity}    1
     Click Button    ${add_to_cart_button}
     Alert Should Be Present   ${alert_cart_message}    ACCEPT
+    Handle Alert
 
 I Choose Safari Date
     I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
