@@ -3,9 +3,6 @@ trigger:
     include:
     - features/*
     
-    exclude:
-    - main
-    - develop
 pool:
   vmImage: 'ubuntu-latest'
 
