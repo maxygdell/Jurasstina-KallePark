@@ -56,7 +56,9 @@ I Select Herbivore Tour safari
     Select From List By Value   ${safari_type_category}   ${safari_type}
     
 I add the tours to cart
-    Click Button    ${safari_cart_button}
+    Click Button    css:#safari-form > button
+    Sleep    2s
+    Handle Alert
     #Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout 
