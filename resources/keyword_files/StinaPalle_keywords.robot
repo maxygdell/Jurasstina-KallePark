@@ -59,8 +59,8 @@ I Select Herbivore Tour safari
     Select From List By Value   ${safari_type_category}   ${safari_type}
     
 I add the tours to cart
-    Click Button    Add to Cart
-    #Click Button    ${safari_cart_button}
+    #Click Button    Add to Cart
+    Click Button    ${safari_cart_button}
     #Alert Should Be Present    ${alert_cart_message}    ACCEPT
     Sleep    3s
     Handle Alert
