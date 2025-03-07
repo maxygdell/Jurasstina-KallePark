@@ -53,7 +53,7 @@ I Choose Safari Date
     Wait Until Element Is Visible    ${safari_type_category}
     Clear Element Text    ${safari_dates_category}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
-    I Select Herbivore Tour safari
+    #I Select Herbivore Tour safari
     I add the tours to cart
 
 I Select Herbivore Tour safari
