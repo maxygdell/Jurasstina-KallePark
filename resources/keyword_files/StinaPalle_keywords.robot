@@ -36,7 +36,7 @@ I am logged in with valid credentials
   
 I Add one Regular Tickets To Cart
     [Arguments]    ${ticket_type}    ${ticket_option}    ${ticket_quantity}
-    Click Link  ${Ticketlink_element}
+    Click Element  ${Ticketlink_element}
     Select From List By Value    ${ticket_type_selector}    ${ticket_type}
     Select From List By Value      ${ticket_category_selector}    ${ticket_option}
     Input Text    ${ticket_quantity}    1
@@ -56,10 +56,8 @@ I Select Herbivore Tour safari
     Select From List By Value   ${safari_type_category}   ${safari_type}
     
 I add the tours to cart
-    Click Button    css:#safari-form > button
-    Sleep    2s
-    Handle Alert
-    #Alert Should Be Present    ${alert_cart_message}    ACCEPT
+    Click Button    ${safari_cart_button}
+    Alert Should Be Present    ${alert_cart_message}    ACCEPT
 
  I Can go To Checkout 
     Click Element    ${cart_nav_button}
