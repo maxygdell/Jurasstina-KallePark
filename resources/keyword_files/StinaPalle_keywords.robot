@@ -37,6 +37,7 @@ I am logged in with valid credentials
 I Add one Regular Tickets To Cart
     [Arguments]    ${ticket_type}    ${ticket_option}    ${ticket_quantity}
     Click Element  ${Ticketlink_element}
+    Sleep    5s
     Select From List By Value    ${ticket_type_selector}    ${ticket_type}
     Select From List By Value      ${ticket_category_selector}    ${ticket_option}
     Input Text    ${ticket_quantity}    1
@@ -45,7 +46,8 @@ I Add one Regular Tickets To Cart
 
 I Choose Safari Date
     I Add one Regular Tickets To Cart     ${ticket_type}    ${ticket_option}    ${ticket_quantity}
-    Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
+    #Execute JavaScript    document.getElementById('safari-section').style.display = 'block'
+    Click Element    id=safari-nav    
     Wait Until Element Is Visible    ${safari_type_category}
     Input Text    ${safari_dates_category}    ${safari_weekday_date}
     I Select Herbivore Tour safari
