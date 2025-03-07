@@ -29,7 +29,7 @@ Book Herbivore Tour
     When I Choose Safari Date
     Then I Can go To Checkout
 
-### New testcase to verify if it still fails handle alert
+
 
 #Book A Herbivore Safari Tour
     #[Tags]    new-feature-video
